@@ -1,4 +1,4 @@
-server
+//server
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -14,6 +14,7 @@ const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 const DB_USER = process.env.DB_USER;
 const DB_PASSWORD = process.env.DB_PASSWORD;
+const DB_HOST = process.env.DB_HOST;
 console.log(DB_USER);
 console.log(DB_PASSWORD);
 
@@ -21,7 +22,7 @@ console.log(DB_PASSWORD);
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
+    host : DB_HOST,
     user : DB_USER,
     password : DB_PASSWORD,
     database : 'smart_brain'
