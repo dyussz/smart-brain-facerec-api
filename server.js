@@ -60,7 +60,8 @@ app.post('/imageurl', (req, res) => { image.handleApiCall(req, res)});
 bcrypt.hash("bacon", null, null, function(err, hash) {
 });
 
-// Start the server only if this file is run directly
+// Start the server only if this file is run directly\
+console.log('App is starting on port ' + APP_PORT);
 if (require.main === module) {
     app.listen(APP_PORT, () => {
         console.log('App is running on port ' + APP_PORT);
