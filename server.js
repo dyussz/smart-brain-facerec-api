@@ -1,5 +1,3 @@
-//server
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
@@ -38,7 +36,7 @@ app.use(bodyParser.json());
 
 //create a route for the root
 app.get('/', (req, res) => {
-    res.json(database.users);});
+    res.send('Smart Brain API running');});
 
 //sign-in route.containing hash into a table//
 app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)});
