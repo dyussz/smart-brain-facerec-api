@@ -24,7 +24,10 @@ const db = knex({
     host : DB_HOST,
     user : DB_USER,
     password : DB_PASSWORD,
-    database : 'smart_brain'
+    database : 'smart_brain',
+    ssl: {
+      rejectUnauthorized: false
+    }
   }
 });
 
