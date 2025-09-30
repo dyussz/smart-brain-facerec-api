@@ -15,6 +15,7 @@ const image = require('./controllers/image');
 const DB_USER = process.env.DB_USER;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_HOST = process.env.DB_HOST;
+const APP_PORT = process.env.APP_PORT || 3001;
 console.log(DB_USER);
 console.log(DB_PASSWORD);
 
@@ -61,8 +62,8 @@ bcrypt.hash("bacon", null, null, function(err, hash) {
 
 // Start the server only if this file is run directly
 if (require.main === module) {
-    app.listen(3001, () => {
-        console.log('App is running on port 3001');
+    app.listen(APP_PORT, () => {
+        console.log('App is running on port ' + APP_PORT);
     });
 }
 
